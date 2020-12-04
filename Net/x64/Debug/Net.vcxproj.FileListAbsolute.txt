@@ -1,0 +1,2 @@
+E:\Github\Net\x64\Debug\Net.pdb
+E:\Github\Net\Net\x64\Debug\Net.pdb

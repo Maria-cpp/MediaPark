@@ -1,0 +1,14 @@
+﻿  Client.cpp
+  IPEndpoint.cpp
+  Network.cpp
+  Packet.cpp
+  PacketManager.cpp
+  Server.cpp
+  Socket.cpp
+  TCPConnection.cpp
+E:\GithubMP\PNet\PNet\PNet\Socket.cpp(256,58): warning C4267: 'argument': conversion from 'size_t' to 'u_short', possible loss of data
+E:\GithubMP\PNet\PNet\PNet\Client.cpp(150,58): warning C4267: '=': conversion from 'size_t' to 'uint16_t', possible loss of data
+E:\GithubMP\PNet\PNet\PNet\Server.cpp(43,21): warning C4018: '<': signed/unsigned mismatch
+E:\GithubMP\PNet\PNet\PNet\Server.cpp(174,59): warning C4267: '=': conversion from 'size_t' to 'uint16_t', possible loss of data
+E:\GithubMP\PNet\PNet\PNet\Client.cpp(207): warning C4715: 'PNet::Client::Frame': not all control paths return a value
+  PNet.vcxproj -> E:\GithubMP\PNet\PNet\Debug\PNet.lib

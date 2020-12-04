@@ -1,0 +1,5 @@
+﻿  Server.cpp
+E:\Github\Net\Net\Server.cpp(65,12): warning C4267: 'argument': conversion from 'size_t' to 'ULONG', possible loss of data
+E:\Github\Net\Net\Server.cpp(88,13): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+E:\Github\Net\Net\Server.cpp(129,9): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Net.vcxproj -> E:\Github\Net\x64\Debug\Net.lib
