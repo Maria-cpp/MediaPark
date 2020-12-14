@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/pc/CLionProjects/Smart Pointers/main.cpp" "/home/pc/CLionProjects/Smart Pointers/cmake-build-debug/CMakeFiles/Smart_Pointers.dir/main.cpp.o"
+  "/home/pc/CLionProjects/Smart Pointers/shared_ptr.cpp" "/home/pc/CLionProjects/Smart Pointers/cmake-build-debug/CMakeFiles/Smart_Pointers.dir/shared_ptr.cpp.o"
   "/home/pc/CLionProjects/Smart Pointers/unique_ptr.cpp" "/home/pc/CLionProjects/Smart Pointers/cmake-build-debug/CMakeFiles/Smart_Pointers.dir/unique_ptr.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

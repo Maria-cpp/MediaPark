@@ -13,7 +13,7 @@ public:
     explicit unique_ptr(int x){data=x; ptr=this->ptr;}
     int getdata(){ return data;}
     unique_ptr* release(unique_ptr *&obj);
-    unique_ptr* reset(unique_ptr *obj);
+    void reset();
     void swap(unique_ptr *ptr1);
     void move(unique_ptr *&ptr);
     unique_ptr* get();

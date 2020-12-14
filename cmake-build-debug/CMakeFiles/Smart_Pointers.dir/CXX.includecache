@@ -9,12 +9,20 @@
 /home/pc/CLionProjects/Smart Pointers/main.cpp
 iostream
 -
-memory
--
 unique_ptr.h
 /home/pc/CLionProjects/Smart Pointers/unique_ptr.h
-thread
-/home/pc/CLionProjects/Smart Pointers/thread
+shared_ptr.h
+/home/pc/CLionProjects/Smart Pointers/shared_ptr.h
+
+/home/pc/CLionProjects/Smart Pointers/shared_ptr.cpp
+shared_ptr.h
+/home/pc/CLionProjects/Smart Pointers/shared_ptr.h
+
+/home/pc/CLionProjects/Smart Pointers/shared_ptr.h
+
+/home/pc/CLionProjects/Smart Pointers/unique_ptr.cpp
+unique_ptr.h
+/home/pc/CLionProjects/Smart Pointers/unique_ptr.h
 
 /home/pc/CLionProjects/Smart Pointers/unique_ptr.h
 iostream

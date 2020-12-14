@@ -14,9 +14,9 @@ unique_ptr *unique_ptr::release(unique_ptr *&obj) {
 }
 
 /** reset the pointer */
-unique_ptr *unique_ptr::reset(unique_ptr *obj) {
-    this->ptr=obj;
-    return obj;
+ void unique_ptr::reset() {
+    unique_ptr *temp=0;
+     *this=*temp;
 }
 
 /** swap the pointers */
