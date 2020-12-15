@@ -11,6 +11,16 @@ iostream
 -
 unique_ptr.h
 /home/pc/CLionProjects/Smart Pointers/unique_ptr.h
+shared_ptr.cpp
+/home/pc/CLionProjects/Smart Pointers/shared_ptr.cpp
+
+/home/pc/CLionProjects/Smart Pointers/shared_ptr.cpp
+shared_ptr.h
+/home/pc/CLionProjects/Smart Pointers/shared_ptr.h
+iostream
+-
+
+/home/pc/CLionProjects/Smart Pointers/shared_ptr.h
 
 /home/pc/CLionProjects/Smart Pointers/unique_ptr.h
 iostream

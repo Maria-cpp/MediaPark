@@ -3,6 +3,8 @@
 
 CMakeFiles/Smart_Pointers.dir/main.cpp.o
  /home/pc/CLionProjects/Smart Pointers/main.cpp
+ /home/pc/CLionProjects/Smart Pointers/shared_ptr.cpp
+ /home/pc/CLionProjects/Smart Pointers/shared_ptr.h
  /home/pc/CLionProjects/Smart Pointers/unique_ptr.h
 CMakeFiles/Smart_Pointers.dir/shared_ptr.cpp.o
  /home/pc/CLionProjects/Smart Pointers/shared_ptr.cpp

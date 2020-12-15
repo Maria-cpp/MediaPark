@@ -1,10 +1,41 @@
 #include <iostream>
 #include "unique_ptr.h"
-
+#include "shared_ptr.cpp"
 
 using namespace std;
 
+class A {
+public:
+    int i;
+    explicit A(int _i) : i(_i) {
+    }
+    ~A() {
+        cout << "deleting A" << endl;
+    }
+};
+
+CuShPtr<A> make_A() {
+    CuShPtr<A> a(new A(5));
+    return a;
+}
+
 int main() {
+    /** Shared_pointers*/
+
+    CuShPtr<A> a = make_A();
+    CuShPtr<A> b = a;
+    CuShPtr<A> c = a;
+
+    cout << a.use_count() << " " << b.use_count() << " " << c.use_count() << endl;
+
+    c.reset();
+
+    cout << a.use_count() << " " << b.use_count() << " " << c.use_count() << endl;
+    cout << a->i << endl;
+
+
+
+/** Unique_pointers */
 
     ///Default constructor
     unique_ptr  obj;
