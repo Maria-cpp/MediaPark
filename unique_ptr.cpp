@@ -4,38 +4,107 @@
 
 #include "unique_ptr.h"
 
-/**releases pointer after assigning control to another pointer*/
-unique_ptr *unique_ptr::release(unique_ptr *&obj) {
+unique_ptr::unique_ptr(const unique_ptr& p) throw() :ptr(p.ptr)// never throws
+{
+    const_cast<unique_ptr&>(p).ptr = NULL; // const-cast to force ownership transfer!
+}
+
+unique_ptr::unique_ptr(unique_ptr &p) {
+    this->ptr=p.ptr;
+    data=p.data;
+    destroy(&p);
+}
+
+/// @brief the destructor releases its ownership and destroy the object
+unique_ptr& unique_ptr::operator=(unique_ptr& p) throw()
+{
+    //unique_ptr::swap(&p);
+    ptr=&p;
+    destroy(&p);
+    return *ptr;
+}
+
+/// @brief this reset releases its ownership and destroy the object
+void unique_ptr::reset() throw()
+{
+    unique_ptr::destroy();
+}
+/// @brief this reset release its ownership and re-acquire another one
+void unique_ptr::reset(unique_ptr* p) throw()
+{
+    SHARED_ASSERT((NULL == p) || (ptr != p) || (data==0));
+    data=p->data;
+    destroy(p);
+}
+
+
+/// @brief release the ownership of the px pointer without destroying the object!
+void unique_ptr::release() throw()
+{
+    this->data=0;
+    this->ptr = NULL;
+}
+
+// underlying pointer operations :
+unique_ptr& unique_ptr::operator*()  const throw()
+{
+    SHARED_ASSERT(NULL != ptr);
+    return *ptr;
+}
+
+
+unique_ptr* unique_ptr::operator->() const throw()
+{
+    //SHARED_ASSERT(NULL != ptr);
+    return ptr;
+}
+unique_ptr* unique_ptr::get()  const throw()
+{
+    return ptr;
+}
+
+/** swap the pointers */
+void unique_ptr::swap(unique_ptr *ptr1) throw() {
+    std::swap(unique_ptr::ptr, ptr1);
+}
+
+
+unique_ptr* unique_ptr::move(unique_ptr *&ptrobj) {
     unique_ptr *temp;
-    temp=obj;
-    obj=0;
+    temp->data=ptrobj->data;
+    temp->ptr=ptrobj->ptr;
+    ptrobj=0;
 
     return temp;
 }
 
-/** reset the pointer */
- void unique_ptr::reset() {
-    unique_ptr *temp=0;
-     *this=*temp;
+
+/// comparaison operators
+bool operator==(const unique_ptr& l, const unique_ptr& r)
+{
+    return (l.get() == r.get());
 }
 
-/** swap the pointers */
-void unique_ptr::swap(unique_ptr *ptr1) {
-    unique_ptr temp= *this;
-    *this=*ptr1;
-    *ptr1=temp;
+bool operator!=(const unique_ptr& l, const unique_ptr& r)
+{
+    return (l.get() != r.get());
 }
 
-/**move the pointer from one to another*/
-void unique_ptr::move(unique_ptr *&ptrobj) {
-    unique_ptr *temp;
-    *this=*ptrobj;
-    ptrobj=0;
-
-    return;
+bool operator<=(const unique_ptr& l, const unique_ptr& r)
+{
+    return (l.get() <= r.get());
 }
 
-/**returns the reference of pointer*/
-unique_ptr *unique_ptr::get() {
-    return this;
+bool operator<(const unique_ptr& l, const unique_ptr& r)
+{
+    return (l.get() < r.get());
+}
+bool operator>=(const unique_ptr& l, const unique_ptr& r)
+{
+    return (l.get() >= r.get());
+}
+
+bool operator>(const unique_ptr& l, const unique_ptr& r)
+{
+    return (l.get() > r.get());
 }
