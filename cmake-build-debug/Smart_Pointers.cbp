@@ -85,9 +85,6 @@
 		<Unit filename="/home/pc/CLionProjects/Smart Pointers/main.cpp">
 			<Option target="Smart_Pointers"/>
 		</Unit>
-		<Unit filename="/home/pc/CLionProjects/Smart Pointers/shared_ptr.cpp">
-			<Option target="Smart_Pointers"/>
-		</Unit>
 		<Unit filename="/home/pc/CLionProjects/Smart Pointers/shared_ptr.h">
 			<Option target="Smart_Pointers"/>
 		</Unit>

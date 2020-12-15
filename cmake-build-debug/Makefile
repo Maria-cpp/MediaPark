@@ -170,33 +170,6 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Pointers.dir/build.make CMakeFiles/Smart_Pointers.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-shared_ptr.o: shared_ptr.cpp.o
-
-.PHONY : shared_ptr.o
-
-# target to build an object file
-shared_ptr.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Pointers.dir/build.make CMakeFiles/Smart_Pointers.dir/shared_ptr.cpp.o
-.PHONY : shared_ptr.cpp.o
-
-shared_ptr.i: shared_ptr.cpp.i
-
-.PHONY : shared_ptr.i
-
-# target to preprocess a source file
-shared_ptr.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Pointers.dir/build.make CMakeFiles/Smart_Pointers.dir/shared_ptr.cpp.i
-.PHONY : shared_ptr.cpp.i
-
-shared_ptr.s: shared_ptr.cpp.s
-
-.PHONY : shared_ptr.s
-
-# target to generate assembly for a file
-shared_ptr.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Pointers.dir/build.make CMakeFiles/Smart_Pointers.dir/shared_ptr.cpp.s
-.PHONY : shared_ptr.cpp.s
-
 unique_ptr.o: unique_ptr.cpp.o
 
 .PHONY : unique_ptr.o
@@ -236,9 +209,6 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... shared_ptr.o"
-	@echo "... shared_ptr.i"
-	@echo "... shared_ptr.s"
 	@echo "... unique_ptr.o"
 	@echo "... unique_ptr.i"
 	@echo "... unique_ptr.s"

@@ -1,6 +1,6 @@
 #include <iostream>
 #include "unique_ptr.h"
-#include "shared_ptr.cpp"
+#include "shared_ptr.h"
 
 using namespace std;
 
@@ -14,17 +14,17 @@ public:
     }
 };
 
-CuShPtr<A> make_A() {
-    CuShPtr<A> a(new A(5));
+shared_ptr<A> make_A() {
+    shared_ptr<A> a(new A(5));
     return a;
 }
 
 int main() {
     /** Shared_pointers*/
 
-    CuShPtr<A> a = make_A();
-    CuShPtr<A> b = a;
-    CuShPtr<A> c = a;
+    shared_ptr<A> a = make_A();
+    shared_ptr<A> b = a;
+    shared_ptr<A> c = a;
 
     cout << a.use_count() << " " << b.use_count() << " " << c.use_count() << endl;
 
