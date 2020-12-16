@@ -16,13 +16,7 @@ unique_ptr::unique_ptr(unique_ptr &p) {
 }
 
 /// @brief the destructor releases its ownership and destroy the object
-unique_ptr& unique_ptr::operator=(unique_ptr& p) throw()
-{
-    //unique_ptr::swap(&p);
-    ptr=&p;
-    destroy(&p);
-    return *ptr;
-}
+
 
 /// @brief this reset releases its ownership and destroy the object
 void unique_ptr::reset() throw()
@@ -55,7 +49,6 @@ unique_ptr& unique_ptr::operator*()  const throw()
 
 unique_ptr* unique_ptr::operator->() const throw()
 {
-    //SHARED_ASSERT(NULL != ptr);
     return ptr;
 }
 unique_ptr* unique_ptr::get()  const throw()
@@ -69,15 +62,14 @@ void unique_ptr::swap(unique_ptr *ptr1) throw() {
 }
 
 
-unique_ptr* unique_ptr::move(unique_ptr *&ptrobj) {
-    unique_ptr *temp;
-    temp->data=ptrobj->data;
-    temp->ptr=ptrobj->ptr;
-    ptrobj=0;
+void unique_ptr::move(unique_ptr *&ptrobj) {
+    int i=ptrobj->data;
+    this->data=i;
+    unique_ptr* ptr1=ptrobj->ptr;
+    this->ptr=ptr1;
+    ptrobj->release();
 
-    return temp;
 }
-
 
 /// comparaison operators
 bool operator==(const unique_ptr& l, const unique_ptr& r)
